@@ -17,6 +17,7 @@
  * `python manage.py collectstatic` - i don’t know for what, but already used it
 
 ## git commands:
+ * `git push origin master` - download changes
  * `git add --all` - and all files to control version
  * `git commit -m "comment"` - commit changes
  * `git push -u origin master` - push changes
