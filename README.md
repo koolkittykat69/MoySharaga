@@ -2,7 +2,7 @@
 
  Convenient management for universities
 
-## Основные цели проекта:
+## The main targets of the project:
 * Team Building Skills
 * Improving database knowledge
 * Improving knowledge of `Python`
