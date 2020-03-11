@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Университеты{% endblock %}
+
+{% block content %}
+
+	{% if university_list %}
+
+		{% for a in university_list %}
+
+			<a href="#">{{a.university_short_title}}</a><br>
+
+		{% endfor %}
+	{% else %}
+			Университеты не найдены =(
+
+	{% endif %}
+
+{% endblock %}
