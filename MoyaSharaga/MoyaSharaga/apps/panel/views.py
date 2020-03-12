@@ -1,11 +1,13 @@
-from django.http import Http404,HttpResponseRedirect
+from django.http import Http404,HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
 
 from .models import University
 
+def home_view(request):
+    return render(request, 'base.html')
+
 def index(request):
-	university_list = University.objects.all()
-	return render(request, 'panel/list.html', {'university_list': university_list})
-# Create your views here.
+    university_list = University.objects.all()
+    return render(request, 'list.html', {'university_list': university_list})
 
