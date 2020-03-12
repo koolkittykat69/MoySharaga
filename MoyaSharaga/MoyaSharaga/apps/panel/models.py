@@ -1,5 +1,6 @@
 from django.db import models
 
+# University model
 class University(models.Model):
 	university_short_title = models.CharField('Название Вуза(Сокращенно)', max_length = 20)
 	university_title = models.CharField('Название Вуза', max_length = 200)
@@ -10,6 +11,7 @@ class University(models.Model):
 		verbose_name = 'ВУЗ'
 		verbose_name_plural = 'ВУЗЫ'
 
+# Faculty model
 class Faculty(models.Model):
 	university = models.ForeignKey(University, on_delete = models.CASCADE)
 	faculty_short_title = models.CharField('Название Факультета(Сокращенно)', max_length = 20)
@@ -20,6 +22,7 @@ class Faculty(models.Model):
 		verbose_name = 'Факультет'
 		verbose_name_plural = 'Факультеты'
 
+# Department model
 class Department(models.Model):
 	faculty = models.ForeignKey(Faculty, on_delete = models.CASCADE)
 	department_short_title = models.CharField('Название Кафедры(Сокращенно)', max_length = 20)
@@ -30,6 +33,7 @@ class Department(models.Model):
 		verbose_name = 'Кафедра'
 		verbose_name_plural = 'Кафедры'
 
+# Specialty model
 class Specialty(models.Model):
 	department = models.ForeignKey(Department, on_delete = models.CASCADE)
 	specialty_title = models.CharField('Название Специальности', max_length = 200)
@@ -39,6 +43,7 @@ class Specialty(models.Model):
 		verbose_name = 'Специальность'
 		verbose_name_plural = 'Специальности'
 
+# Student model
 class Student(models.Model):
 	student_surname = models.CharField('Фамилия', max_length = 200)
 	student_name = models.CharField('Имя', max_length = 200)
@@ -47,18 +52,19 @@ class Student(models.Model):
 	student_sex = models.CharField('Пол', max_length = 1)
 	specialty = models.ForeignKey(Specialty, on_delete = models.CASCADE)
 	def __str__(self):
-		return self.specialty_title
+		return self.student_surname
 	class Meta:
 		verbose_name = 'Студент'
 		verbose_name_plural = 'Студенты'
 
+# Teacher model
 class Teacher(models.Model):
 	teacher_surname = models.CharField('Фамилия', max_length = 200)
 	teacher_name = models.CharField('Имя', max_length = 200)
 	teacher_patronymic = models.CharField('Отчество', max_length = 200)
 	teacher_sex = models.CharField('Пол', max_length = 1)
 	def __str__(self):
-		return self.specialty_title
+		return self.teacher_surname
 	class Meta:
 		verbose_name = 'Преподователь'
 		verbose_name_plural = 'Преподователи'
