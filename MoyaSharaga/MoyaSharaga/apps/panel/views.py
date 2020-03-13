@@ -9,5 +9,5 @@ def home_view(request):
 
 def index(request):
     university_list = University.objects.all()
-    return render(request, 'list.html', {'university_list': university_list})
+    return render(request, 'search.html', {'university_list': university_list})
 
