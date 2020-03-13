@@ -88,6 +88,33 @@ class Teacher(models.Model):
         return self.teacher_surname
 	
     class Meta:
-        verbose_name = 'Преподователь'
-        verbose_name_plural = 'Преподователи'
+        verbose_name = 'Преподаватель'
+        verbose_name_plural = 'Преподаватели'
+
+# Subject model alpha v1
+class Subject(models.Model):
+   specialty = models.ForeignKey(Specialty, on_delete = models.CASCADE)
+   group = models.ForeignKey(Group, on_delete = models.CASCADE)
+   subject_title = models.CharField('Название Предмета', max_length = 50)
+   
+   def __str__(self):
+       return self.subject_title
+   
+   class Meta:
+       verbose_name = 'Предмет'
+       verbose_name_plural = 'Предметы'
+
+# Mark model alpha v1
+class Mark(models.Model):
+   subject = models.ForeignKey(Subject, on_delete = models.CASCADE)
+   student = models.ForeignKey(Student, on_delete = models.CASCADE)
+   # maybe mark can be integer/ but we have marks as 'A' 'B' 'F' 
+   mark_title = models.CharField('Оценка', max_length = 5)
+   
+   def __str__(self):
+       return self.mark_title
+   
+   class Meta:
+       verbose_name = 'Оценка'
+       verbose_name_plural = 'Оценки'
 
