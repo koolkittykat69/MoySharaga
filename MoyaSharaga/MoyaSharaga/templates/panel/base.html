@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>{% block title %} Моя Шарага {% endblock %}</title>
 </head>
-<body>
+<body class="h-100">
 
 	{% block content %}
     
-    <div class="text-center">
-        <div class"container">
-            <h1 class="font-weight-bold">Моя Шарага</h1>
-            <div> 
-                <a href="panel/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Найти себя</a>
-                <a href="admin/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Добавить</a>
-            </div>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <form class="form-example" action="" method="post">
+                <h1>Моя Шарага</h1>
+                <p class="description">Удобный способ найти информацию о студенте</p>
+                <div class="form-group">
+                    <a href="panel/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Найти себя</a>
+                    <a href "admin/" class="btn btn-primary btn-lg active" role="button" aria-pressed"true">Добавить</a>
+                </div>
+                <p class="copyright">&copy; MoyaSharaga by <a href="#">!DGMA</a>.</p>
+            </form>
         </div>
     </div>
+</div> 
 
     {% endblock %}
 

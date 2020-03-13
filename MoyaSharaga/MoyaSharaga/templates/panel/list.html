@@ -1,19 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Университеты{% endblock %}
+{% block title %}Поиск{% endblock %}
 
 {% block content %}
 
-	{% if university_list %}
-
-		{% for a in university_list %}
-
-			<a href="#">{{a.university_short_title}}</a><br>
-
-		{% endfor %}
-	{% else %}
-			Университеты не найдены =(
-
-	{% endif %}
+<div class="container">
+  <div class="text-center">
+    <h1 class"font-weight-bold">Введите информацию</h1>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-1" type="submit">Search</button>
+    </form>
+  </div>
+</div>
 
 {% endblock %}
