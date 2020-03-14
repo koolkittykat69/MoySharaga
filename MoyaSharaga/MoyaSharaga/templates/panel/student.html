@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Студент id{{student.id}}{% endblock %}
+
+{% block content %}
+
+<div class="container h-100">
+    <div class="row h-100 justify-content ">
+        <div>
+          <h1 class="display-3">Информация о студенте: id{{student.id}} </h1>
+
+          <p class="display-4"><b>Фамилия:</b> {{student.student_surname}}</p>
+          <p class="display-4"><b>Имя:</b>{{student.student_name}}</p>
+          <p class="display-4"><b>Отчество:</b>{{student.student_name}}</p>
+          <p class="display-4"><b>Группа:</b>{{student.group}}</p>
+          <p class="display-4"><b>Пол:</b>{{student.student_sex}}</p>
+
+
+      </div>
+
+  </div>
+</div>
+
+
+{% endblock %}
