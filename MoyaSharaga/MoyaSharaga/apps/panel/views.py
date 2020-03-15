@@ -8,8 +8,12 @@ def home_view(request):
     return render(request, 'base.html')
 
 def index(request):
-    university_list = University.objects.all()
-    return render(request, 'search.html', {'university_list': university_list})
+    if request.GET.get("search"):
+        search = request.GET.get("search")
+        students_search = Student.objects.filter(student_surname = search)
+        return render(request, 'results.html', {'students_search': students_search})
+    else:
+        return render(request, 'search.html')
 
 def student(request, student_id):
     try:

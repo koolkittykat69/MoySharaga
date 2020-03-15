@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Результаты поиска</h1>
+{% if students_search %}
+
+        {% for c in students_search %}
+            <p>
+                <a href="student_id={{c.id}} ">{{c.student_name}} {{c.student_surname}} {{c.student_patronymic}}</a>
+            </p>
+
+        {% endfor %}
+{% else %}
+        Студент не найден =(
+
+{% endif %}
+
+{% endblock %}
