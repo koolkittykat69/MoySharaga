@@ -135,7 +135,7 @@ class Mark(models.Model):
 # Connection of Teacher, Subject, Group model v1
 class СonnectionTSG(models.Model):
 
-  teatcher = models.ForeignKey(Teacher, on_delete = models.CASCADE)
+  teacher = models.ForeignKey(Teacher, on_delete = models.CASCADE)
   group = models.ForeignKey(Group, on_delete = models.CASCADE)
   subject = models.ForeignKey(Subject, on_delete = models.CASCADE)
 
@@ -146,3 +146,18 @@ class СonnectionTSG(models.Model):
     class Meta:
       verbose_name = 'СonnectionTSG'
       verbose_name_plural = 'СonnectionsTSG'
+
+# Timetable model v1
+class Timetable(models.Model):
+
+  group = models.ForeignKey(Group, on_delete = models.CASCADE)
+  subject = models.ForeignKey(Subject, on_delete = models.CASCADE)
+  subject_datetime_start = models.DateTimeField('Время начала пары')
+  subject_datetime_stop = models.DateTimeField('Время конца пары')
+  
+  def __str__(self):
+    return str(self.id)
+   
+    class Meta:
+      verbose_name = 'Расписание'
+      verbose_name_plural = 'Расписание'
