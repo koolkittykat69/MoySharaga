@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # import models
-from .models import University, Faculty, Department, Specialty, Group, Student, Teacher, Subject, Mark, СonnectionTSG
+from .models import University, Faculty, Department, Specialty, Group, Student, Teacher, Subject, Mark, СonnectionTSG, Timetable
 
 class UniversityAdmin(admin.ModelAdmin):
     list_display = ("university_short_title", "university_title")
@@ -31,7 +31,10 @@ class MarkAdmin(admin.ModelAdmin):
     list_display = ("subject", "student", "mark_title", "mark_datetime")
 
 class СonnectionTSGAdmin(admin.ModelAdmin):
-    list_display = ("teatcher", "group", "subject")
+    list_display = ("teacher", "group", "subject")
+
+class TimetableAdmin(admin.ModelAdmin):
+    list_display = ("group", "subject", "subject_datetime_start", "subject_datetime_stop")
 
 admin.site.register(University, UniversityAdmin)
 admin.site.register(Faculty, FacultyAdmin)
@@ -43,3 +46,4 @@ admin.site.register(Teacher, TeacherAdmin)
 admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Mark, MarkAdmin)
 admin.site.register(СonnectionTSG, СonnectionTSGAdmin)
+admin.site.register(Timetable, TimetableAdmin)
