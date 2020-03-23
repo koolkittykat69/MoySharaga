@@ -2,7 +2,7 @@ from django.http import Http404,HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import University, Student, Group 
+from .models import University, Student, Group, Timetable
 
 def home_view(request):
     return render(request, 'base.html')
@@ -22,3 +22,9 @@ def student(request, student_id):
         raise Http404("Студент не найден")
     return render(request, 'student.html', {'student': student})
 
+def timetable(request, timetable_id):
+    try:
+        timetable = Timetable.objects.get(id = timetable_id)
+    except:
+        raise Http404("Расписание не найдено")
+    return render(request, 'timetable.html', {'timetable': timetable})

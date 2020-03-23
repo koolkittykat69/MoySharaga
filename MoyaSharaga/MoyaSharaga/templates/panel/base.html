@@ -1,70 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>{% block title %} Моя Шарага {% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>{% block title %} Моя Шарага {% endblock %}</title>
 </head>
 <body class="h-100">
 <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Моя Шарага</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href=''>Моя Шарага</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown
-                     </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 <!-- Navbar -->
 
 {% block content %}
 
 <div class="container h-100">
-    <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-10 col-md-8 col-lg-6">
-            <form>
-                <h1>Моя Шарага</h1>
-                <p class="description">Удобный способ найти информацию о студенте</p>
-                <div class="form-group">
-                    <a href="panel/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Найти себя</a>
-                    <a href="admin/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Добавить</a>
-                </div>
-                <p class="copyright">&copy; MoyaSharaga by <a href="#">gaysexteam</a>.</p>
-            </form>
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-10 col-md-8 col-lg-6">
+      <form>
+        <h1>Моя Шарага</h1>
+        <p class="description">Удобный способ найти информацию о студенте</p>
+        <div class="form-group">
+          <a href="panel/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Найти себя</a>
+          <a href="admin/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Добавить</a>
         </div>
+        <p class="copyright">&copy; MoyaSharaga by <a href="#">gaysexteam</a>.</p>
+      </form>
     </div>
+  </div>
 </div> 
 
 {% endblock %}
 <!-- Footer -->
 <footer class="page-footer font-small blue">
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">&copy; Moya Sharaga by <a href="#">gaysexteam</a>.</p>
-    </div>
-    <!-- Copyright -->
-
+  <div class="footer-copyright text-center py-3">&copy; Moya Sharaga by <a href="#">gaysexteam</a>.</p>
+  </div>
 </footer>
 <!-- Footer -->
 

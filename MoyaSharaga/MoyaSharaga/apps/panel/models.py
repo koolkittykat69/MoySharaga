@@ -141,7 +141,7 @@ class СonnectionTSG(models.Model):
 
 
   def __str__(self):
-    return str(self.id)
+    return str(self.teacher)
    
     class Meta:
       verbose_name = 'СonnectionTSG'
@@ -156,7 +156,7 @@ class Timetable(models.Model):
   subject_datetime_stop = models.DateTimeField('Время конца пары')
   
   def __str__(self):
-    return str(self.id)
+    return str(self.subject)
    
     class Meta:
       verbose_name = 'Расписание'
