@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+
 NOT_SPECIFIED = 'N'
 MALE = 'M'
 FEMALE = 'F'
@@ -8,6 +9,22 @@ SEX_CHOICES = (
 (NOT_SPECIFIED, 'Не указанно'),
 (MALE, 'Мужчина'),
 (FEMALE, 'Женщина'),
+)
+
+NODAY = 'N/A'
+MONDAY = 'Понедельник'
+TUESDAY = 'Вторник'
+WENDSDAY = 'Среда'
+THURSDAY = 'Четверг'
+FRIDAY = 'Пятница'
+
+DAY_CHOICES = (
+(NODAY, 'Не выбрано'),
+(MONDAY, 'Понедельник'),
+(TUESDAY, 'Вторник'),
+(WENDSDAY, 'Среда'),
+(THURSDAY, 'Четверг'),
+(FRIDAY, 'Пятница'),
 )
 
 # University model
@@ -152,8 +169,9 @@ class Timetable(models.Model):
 
   group = models.ForeignKey(Group, on_delete = models.CASCADE)
   subject = models.ForeignKey(Subject, on_delete = models.CASCADE)
-  subject_datetime_start = models.DateTimeField('Время начала пары')
-  subject_datetime_stop = models.DateTimeField('Время конца пары')
+  day = models.CharField('День недели', max_length=50, choices = DAY_CHOICES, default = NODAY)
+  subject_datetime_start = models.TimeField('Время начала пары')
+  subject_datetime_stop = models.TimeField('Время конца пары')
   
   def __str__(self):
     return str(self.subject)
