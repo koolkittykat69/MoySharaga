@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from panel import views
+from users import views as user_views
 
 urlpatterns = [
     path('', views.home_view, name='home'),
     path('panel/', include('panel.urls')),
-    path('grappelli/', include('grappelli.urls')), # grappelli URLS
+    path('register/', user_views.register, name="register"),
+    path('grappelli', include('grappelli.urls')),
     path('admin/', admin.site.urls), # admin site
 ]
