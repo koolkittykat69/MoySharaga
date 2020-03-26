@@ -2,6 +2,7 @@ from django import forms
 
 from .models import Timetable
 
+# form for timetable
 class TimetableForm(forms.ModelForm):
 
     class Meta:
