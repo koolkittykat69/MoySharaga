@@ -7,6 +7,7 @@
   <title>{% block title %} Моя Шарага {% endblock %}</title>
 </head>
 <body class="h-100">
+
 <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href='#'>Моя Шарага</a>
@@ -56,31 +57,26 @@
     {% endfor %}
 {% endif %}
 
-{% block content %}
-
 <div class="container h-100">
   <div class="row h-100 justify-content-center align-items-center">
     <div class="col-10 col-md-8 col-lg-6">
+      {% block content %}
       <form>
         <h1>Моя Шарага</h1>
         <p class="description">Удобный способ найти информацию о студенте</p>
         <div class="form-group">
             <a href="panel/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Найти себя</a>
           <a href="admin/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Добавить</a>
-        </div>
-        <p class="copyright">&copy; MoyaSharaga by <a href="#">gaysexteam</a>.</p>
-      </form>
+
+      {% endblock %}
     </div>
   </div>
-</div> 
+</div>
 
-{% endblock %}
-<!-- Footer -->
 <footer class="page-footer font-small blue">
   <div class="footer-copyright text-center py-3">&copy; Moya Sharaga by <a href="#">gaysexteam</a>.</p>
   </div>
 </footer>
-<!-- Footer -->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

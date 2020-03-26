@@ -10,11 +10,17 @@
 * Improved knowledge of Android development
 * Improving iOS development knowledge
 
+## Libraries:
+ * use pip3 if you have both python2 and python3
+ * `pip install django-grappelli` - better admin page
+ * `pip install django-crispy-forms` - better forms 
+
+
 ## Some commands:
+ * use python3 if you have both python2 and python3
  * `python manage.py runserver` - starts the server on port 8000
- * `python manage.py migrate` - migration
+ * `python manage.py makemigrations` then ` python manage.py migrate ` - migration
  * `python manage.py startapp 'appname'` - create app
- * `python manage.py collectstatic` - i don’t know for what, but already used it
 
 ## git commands:
  * `git push origin master` - download changes
@@ -30,9 +36,9 @@
 
 ## Author/contacts
 
-**Nikita 'Gronify' Malinovskiy**
-**Alexey 'AlexEnn' Dudnick**
-**Andrey 'Kitirumba' Kopilevich**
+**Nikita 'Gronify' Malinovskiy,**
+**Alexey 'AlexEnn' Dudnick,**
+**Andrey 'Kitirumba' Kopilevich,**
 
 [https://github.com/Gronify](https://github.com/Gronify "https://github.com/Gronify")
 [https://github.com/AlexEnn](https://github.com/AlexEnn "https://github.com/AlexEnn")
