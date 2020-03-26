@@ -30,10 +30,12 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-    
+
 INSTALLED_APPS = [
     'panel',
+    'crispy_forms',
     'grappelli',
+    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'MoyaSharaga.urls'
@@ -59,7 +61,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(PROJECT_ROOT, 'templates/panel')
+            os.path.join(PROJECT_ROOT, 'templates/panel'),
+            os.path.join(PROJECT_ROOT, 'templates/users'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -127,3 +130,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'

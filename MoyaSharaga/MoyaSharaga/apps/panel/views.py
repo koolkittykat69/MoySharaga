@@ -8,7 +8,7 @@ from .models import University, Student, Group, Timetable
 def home_view(request):
     return render(request, 'base.html')
 
-def index(request, student_id):
+def index(request):
     if request.GET.get("search"):
         search = request.GET.get("search")
         students_search = Student.objects.filter(student_surname = search)
