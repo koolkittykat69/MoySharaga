@@ -36,11 +36,9 @@
 
 ## Author/contacts
 
-**Nikita 'Gronify' Malinovskiy,**
-**Alexey 'AlexEnn' Dudnick,**
-**Andrey 'Kitirumba' Kopilevich,**
+**Nikita 'Gronify' Malinovskiy**
+**Alexey 'AlexEnn' Dudnick**
 
 [https://github.com/Gronify](https://github.com/Gronify "https://github.com/Gronify")
 [https://github.com/AlexEnn](https://github.com/AlexEnn "https://github.com/AlexEnn")
-[https://github.com/Kitinerd](https://github.com/Kitinerd "https://github.com/Kitinerd")
 
