@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>{% block title %} Моя Шарага {% endblock %}</title>
+  <title>{% block title %} Моя Шарага {% endblock title %}</title>
 </head>
 <body class="h-100">
 
@@ -76,7 +76,7 @@
             <a href="{% url 'panel:index' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Найти себя</a>
             <a href="{% url 'admin:index' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Добавить</a>
 
-      {% endblock %}
+      {% endblock title%}
     </div>
   </div>
 </div>
