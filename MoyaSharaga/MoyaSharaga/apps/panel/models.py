@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+# consts for Student and Teacher models(sex)
 NOT_SPECIFIED = 'N'
 MALE = 'M'
 FEMALE = 'F'
@@ -11,6 +12,7 @@ SEX_CHOICES = (
 (FEMALE, 'Женщина'),
 )
 
+# consts for Timetable model(day)
 NODAY = 'N/A'
 MONDAY = 'Понедельник'
 TUESDAY = 'Вторник'
@@ -39,6 +41,7 @@ class University(models.Model):
       verbose_name = 'ВУЗ'
       verbose_name_plural = 'ВУЗЫ'
 
+
 # Faculty model
 class Faculty(models.Model):
   university = models.ForeignKey(University, on_delete = models.CASCADE)
@@ -46,11 +49,12 @@ class Faculty(models.Model):
   faculty_title = models.CharField('Название Факультета', max_length = 200)
 
   def __str__(self):
-    return self.faculty_short_title 
+    return self.faculty_short_title
 
     class Meta:
       verbose_name = 'Факультет'
       verbose_name_plural = 'Факультеты'
+
 
 # Department model
 class Department(models.Model):
@@ -65,6 +69,7 @@ class Department(models.Model):
       verbose_name = 'Кафедра'
       verbose_name_plural = 'Кафедры'
 
+
 # Specialty model
 class Specialty(models.Model):
   department = models.ForeignKey(Department, on_delete = models.CASCADE)
@@ -72,10 +77,11 @@ class Specialty(models.Model):
 
   def __str__(self):
     return self.specialty_title
-    
+
     class Meta:
       verbose_name = 'Специальность'
       verbose_name_plural = 'Специальности'
+
 
 # Group model
 class Group(models.Model):
@@ -84,10 +90,11 @@ class Group(models.Model):
 
   def __str__(self):
     return self.group_title
-   
+
     class Meta:
       verbose_name = 'Группа'
       verbose_name_plural = 'Группы'
+
 
 # Student model
 class Student(models.Model):
@@ -100,10 +107,11 @@ class Student(models.Model):
 
   def __str__(self):
     return self.student_surname
-    
+
     class Meta:
       verbose_name = 'Студент'
       verbose_name_plural = 'Студенты'
+
 
 # Teacher model v2
 class Teacher(models.Model):
@@ -122,6 +130,7 @@ class Teacher(models.Model):
       verbose_name = 'Преподаватель'
       verbose_name_plural = 'Преподаватели'
 
+
 # Subject model v2
 class Subject(models.Model):
  specialty = models.ForeignKey(Specialty, on_delete = models.CASCADE)
@@ -129,25 +138,27 @@ class Subject(models.Model):
 
  def __str__(self):
    return self.subject_title
-   
+
    class Meta:
      verbose_name = 'Предмет'
      verbose_name_plural = 'Предметы'
+
 
 # Mark model v1
 class Mark(models.Model):
   subject = models.ForeignKey(Subject, on_delete = models.CASCADE)
   student = models.ForeignKey(Student, on_delete = models.CASCADE)
-  # maybe mark can be integer/ but we have marks as 'A' 'B' 'F' 
+  # maybe mark can be integer/ but we have marks as 'A' 'B' 'F'
   mark_title = models.CharField('Оценка', max_length = 5)
   mark_datetime = models.DateTimeField('Время оценки', default=timezone.now)
-   
+
   def __str__(self):
     return self.mark_title
 
     class Meta:
       verbose_name = 'Оценка'
       verbose_name_plural = 'Оценки'
+
 
 # Connection of Teacher, Subject, Group model v1
 class СonnectionTSG(models.Model):
@@ -159,12 +170,13 @@ class СonnectionTSG(models.Model):
 
   def __str__(self):
     return str(self.teacher)
-   
+
     class Meta:
       verbose_name = 'СonnectionTSG'
       verbose_name_plural = 'СonnectionsTSG'
 
-# Timetable model v1
+
+# Timetable model v2
 class Timetable(models.Model):
 
   group = models.ForeignKey(Group, on_delete = models.CASCADE)
@@ -172,10 +184,10 @@ class Timetable(models.Model):
   day = models.CharField('День недели', max_length=50, choices = DAY_CHOICES, default = NODAY)
   subject_datetime_start = models.TimeField('Время начала пары')
   subject_datetime_stop = models.TimeField('Время конца пары')
-  
+
   def __str__(self):
     return str(self.subject)
-   
+
     class Meta:
       verbose_name = 'Расписание'
       verbose_name_plural = 'Расписание'

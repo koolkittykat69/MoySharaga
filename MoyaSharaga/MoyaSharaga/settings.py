@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-Ru'
 
 TIME_ZONE = 'UTC'
 
@@ -133,5 +133,6 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# Django Auth
 LOGIN_REDIRECT_URL = 'home'
-LOGIN_URL = 'login'
+LOGIN_URL = 'users:login'
