@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div>
+    <div class="col-10 col-md-10 col-lg-6">
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
@@ -14,7 +14,7 @@
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Нужен Аккаунт?<a class="ml-2" href="{% url 'users:register' %}">Зарегестрироваться</a>
+                Нет Аккаунта?<a class="ml-2" href="{% url 'users:register' %}">Зарегестрироваться</a>
             </small>
         </div>
       </div>

@@ -12,7 +12,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
     <div class="mx-auto order-0">
-        <a class="navbar-brand mx_auto" href="#">Моя Шарага</a>
+        <a class="navbar-brand mx_auto" href="{% url 'home' %}">МояШарага</a>
     </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +34,7 @@
             </div>
         </li>
       </ul>
+      
 
       <ul class="navbar-nav ml-auto">
         </li>
@@ -66,16 +67,25 @@
 {% endif %}
 
 <div class="container h-100">
-  <div class="row h-100 justify-content-center align-items-center">
-    <div class="col-10 col-md-8 col-lg-6">
+  <div class="row h-100 justify-content-center">
+    <div class="col-10 col-md-10 col-lg-12">
       {% block content %}
-      <form>
-        <h1>Моя Шарага</h1>
-        <p class="description">Удобный способ найти информацию о студенте</p>
-        <div class="form-group">
-            <a href="{% url 'panel:index' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Найти себя</a>
-            <a href="{% url 'admin:index' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Добавить</a>
-
+      {% if user.is_authenticated %}
+      <br>
+      <h1>МояШарага</h1>
+      <p class="description">Удобный способ найти информацию о студенте</p>
+      <div class="form-group">
+          <a href="{% url 'panel:index' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Найти себя</a>
+          <a href="{% url 'admin:index' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Добавить</a>
+      {% else %}
+      <br>
+      <h1>Моя Шарага</h1>
+      <p class="lead">Удобный способ найти информацию о студенте</p>
+      <br>
+      <p>Для использованния сервиса нужно иметь аккаунт</p>
+      <a href="{% url 'users:login' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Войти</a>
+      <a href="{% url 'users:register' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Зарегистрироваться</a>
+      {% endif %}
       {% endblock %}
     </div>
   </div>
